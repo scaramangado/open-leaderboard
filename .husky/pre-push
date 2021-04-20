@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-cd open-leaderboard-frontend && npm test
+npm test --prefix open-leaderboard-frontend
+npm test --prefix open-leaderboard-backend

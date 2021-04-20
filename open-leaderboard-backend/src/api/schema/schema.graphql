@@ -1,0 +1,10 @@
+type Game {
+  name: String!,
+  slug: String!,
+  releaseDate: String!,
+}
+
+type Query {
+  games: [Game]!
+  game(slug: String!): Game
+}
