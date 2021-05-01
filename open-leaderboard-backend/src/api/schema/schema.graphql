@@ -2,9 +2,36 @@ type Game {
   name: String!,
   slug: String!,
   releaseDate: String!,
+  mainBoardId: String!,
+}
+
+type Leaderboard {
+  id: String!,
+  name: String!,
+  game: Game!,
+  parent: Leaderboard,
+  subBoards: [String]!,
+  categories: [String]!,
+  displayAsCategory: Boolean!,
+}
+
+type Category {
+  id: String!,
+  name: String!,
+  game: Game!,
+  leaderboard: Leaderboard!,
+  submissions: [Submission]!
+}
+
+type Submission {
+  id: String!,
+  category: Category!,
+  time: String!,
 }
 
 type Query {
-  games: [Game]!
-  game(slug: String!): Game
-}
+  games: [Game]!,
+  game(slug: String!): Game,
+  leaderboards(gameSlug: String!): [Leaderboard]!,
+  categories(gameSlug: String!): [Category]!,
+ }

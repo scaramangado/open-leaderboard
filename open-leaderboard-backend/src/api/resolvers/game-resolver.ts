@@ -11,6 +11,7 @@ function mapToGql(game?: Game): any {
     slug: game.slug,
     name: game.name,
     releaseDate: game.releaseDate.toISOString(),
+    mainBoardId: game.mainBoardId,
   }
 }
 

@@ -10,14 +10,16 @@ const mockGames = [
   {
     slug: "oot",
     name: "Ocarina of Time",
-    releaseDate: new Date(1998, 11, 21),
+    releaseDate: new Date(Date.UTC(1998, 11, 21)),
+    mainBoardId: "oot_main",
   },
   {
     slug: "sm64",
     name: "Super Mario 64",
-    releaseDate: new Date(1996, 6, 23)
+    releaseDate: new Date(Date.UTC(1996, 6, 23)),
+    mainBoardId: "sm64_main",
   }
-]
+];
 
 const gameRepository: GameRepository = {
 
